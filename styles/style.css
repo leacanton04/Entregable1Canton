@@ -413,7 +413,7 @@ h1{
 }
 /* SECCION COMENTARIOS */
 .comentarios{
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     grid-row: 3 / 4;
 }
 .boton-comentarios{
