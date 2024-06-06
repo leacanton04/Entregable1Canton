@@ -249,7 +249,7 @@ h1{
     text-decoration: line-through; 
 }
 /* En pantalla desktop esconde carrusel*/
-@media only screen and (min-width: 424px){
+@media only screen and (min-width: 426px){
     .venta-mobile{
         display: none;
     }
