@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Moda </title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>      
+        <nav class="navbar navbar-expand-md navbar-dark  " >
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="../index.html">
+                    <img  src="../media/logo.png" alt="Logo">
+                </a>
+              <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse bar-pages" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link pages" aria-current="page" href="../pages/moda.html">Moda</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pages" href="../pages/noticias.html">Noticias</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pages" href="../pages/galeria.html">Galería</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pages" href="../pages/contacto.html"> Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section >
+            <img class="oferta-encabezado" src="../media/moda/moda-imagen-oferta.png" alt="9 cuotas sin interes"> <!-- Esta imagen es sacada de un sitio web existente, la voy cambiar, pero no encontre una que me gustara y esta representa bien la idea que tenia -->
+        </section>
+        <h2 class="division-seccion moda ">
+            EXCLUSIVOS
+        </h2>
+        <!-- SECCION EXCLUSIVOS -->
+        <section class="exclusivo seccion-moda">
+            <!-- Vercion desktop --> 
+            <div class="venta-pc">  
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/exclusivo1.png" alt="Zapatilla Jordan 1 Chicago OG 1985">
+                    <p class="nombre-producto"> Jordan 1 Chicago OG 1985 </p>
+                    <p class="precio">$90.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/exclusivo2.png" alt="Zapatilla Under Armour Curry 6 'Splash Party'">
+                    <p class="nombre-producto"> Under Armour Curry 6 'Splash Party' </p>
+                    <p class="precio">$90.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/exclusivo3.png" alt="Zapatilla Nike LeBron 17 'Lakers'">
+                    <p class="nombre-producto"> Nike LeBron 17 'Lakers' </p>
+                    <p class="precio">$90.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/exclusivo4.png" alt="Zapatilla Adidas Dame 6 'Ruthless' ">
+                    <p class="nombre-producto"> Adidas Dame 6 'Ruthless' </p>
+                    <p class="precio">$90.000</p>
+                </article>
+            </div>
+            <!-- Version mobile -->
+            <div class="venta-mobile">
+                <div id="carouselExclusivos" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/exclusivo1.png" alt="Zapatilla Jordan 1 Chicago OG 1985">
+                            <p class="nombre-producto"> Jordan 1 Chicago OG 1985 </p>
+                            <p class="precio">$90.000</p>
+                        </article> 
+                      </div>
+                      <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/exclusivo2.png" alt="Zapatilla Under Armour Curry 6 'Splash Party'">
+                            <p class="nombre-producto"> Under Armour Curry 6 'Splash Party' </p>
+                            <p class="precio">$90.000</p>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/exclusivo3.png" alt="Zapatilla Nike LeBron 17 'Lakers'">
+                            <p class="nombre-producto"> Nike LeBron 17 'Lakers' </p>
+                            <p class="precio">$90.000</p>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/exclusivo4.png" alt="Zapatilla Adidas Dame 6 'Ruthless' ">
+                            <p class="nombre-producto"> Adidas Dame 6 'Ruthless' </p>
+                            <p class="precio">$90.000</p>
+                        </article>    
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExclusivos" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExclusivos" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div> 
+        </section>
+        <!-- ANUNCIO PREMIUM -->
+        <section class="premium">
+            <h3>
+                Hazte miembro premium
+            </h3>
+            <div>
+                <ul>
+                    <li>Descuentos</li>
+                    <li>Envio gratis</li>
+                    <li>Sorteos mensuales</li>
+                </ul>
+                <img src="../media/Iconos/icono-premium.png" alt="Icono de usuario premium">
+            </div>
+        </section>
+        <!-- SECCION REMERAS -->
+        <h2 class="division-seccion moda ">
+            REMERAS
+        </h2>
+        <section class="remeras seccion-moda">
+            <!-- Version desktop -->
+            <div class="venta-pc">      
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/Remeras1.png" alt="Camiseta James Harden Huston Rockets">
+                    <p class="nombre-producto"> Camiseta James Harden Huston Rockets </p>
+                    <p class="precio">$100.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/Remeras2.png" alt="Camiseta Manu Ginobili San Antonio Spurs">
+                    <p class="nombre-producto"> Camiseta Manu Ginobili San Antonio Spurs </p>
+                    <p class="precio">$85.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/Remeras3.png" alt="Camiseta LeBron James Los Angeles Lakers">
+                    <p class="nombre-producto"> Camiseta LeBron James Los Angeles Lakers </p>
+                    <p class="precio">$100.000</p>
+                </article>
+                <article class="conteiner articulo-moda conteiner-venta">
+                    <img src="../media/Moda/Remeras4.png" alt="Camiseta Michel Jordan Chicago Bulls">
+                    <p class="nombre-producto"> Camiseta Michel Jordan Chicago Bulls </p>
+                    <p class="precio">$80.000</p>
+                </article>
+            </div>
+            <!-- Version mobile -->
+            <div class="venta-mobile">
+                <div id="carouselRemeras" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/Remeras1.png" alt="Camiseta James Harden Huston Rockets">
+                            <p class="nombre-producto"> Camiseta James Harden Huston Rockets </p>
+                            <p class="precio">$100.000</p>
+                        </article> 
+                    </div>
+                    <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/Remeras2.png" alt="Camiseta Manu Ginobili San Antonio Spurs">
+                            <p class="nombre-producto"> Camiseta Manu Ginobili San Antonio Spurs </p>
+                            <p class="precio">$85.000</p>
+                        </article>
+                    </div>
+                    <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/Remeras3.png" alt="Camiseta LeBron James Los Angeles Lakers">
+                            <p class="nombre-producto"> Camiseta LeBron James Los Angeles Lakers </p>
+                            <p class="precio">$100.000</p>
+                        </article>
+                    </div>
+                    <div class="carousel-item">
+                        <article class="conteiner articulo-moda conteiner-venta">
+                            <img src="../media/Moda/Remeras4.png" alt="Camiseta Michel Jordan Chicago Bulls">
+                            <p class="nombre-producto"> Camiseta Michel Jordan Chicago Bulls </p>
+                            <p class="precio">$80.000</p>
+                        </article>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselRemeras" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselRemeras" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>                
+            </div> 
+        </section>
+        <!-- SECCION CALZADO -->
+        <h2 class="division-seccion moda ">
+            CALZADO
+        </h2>
+            <section class="calzado seccion-moda"> 
+                <div class="venta-pc">  
+                    <article class="conteiner articulo-moda conteiner-venta">
+                        <img src="../media/Moda/calzado1.png" alt="Zapatilla Nike Kyrie 7 'University Blue'">
+                        <p class="nombre-producto"> Nike Kyrie 7 'University Blue' </p>
+                        <p class="precio">$90.000</p>
+                    </article>
+                    <article class="conteiner articulo-moda conteiner-venta">
+                        <img src="../media/Moda/calzado2.png" alt="Zapatilla Tatum 2 'Legacy'">
+                        <p class="nombre-producto"> Tatum 2 'Legacy' </p>
+                        <p class="precio">$90.000</p>
+                    </article>
+                    <article class="conteiner articulo-moda conteiner-venta">
+                        <img src="../media/Moda/calzado3.png" alt="Zapatilla Luka 2">
+                        <p class="nombre-producto"> Luka 2 </p>
+                        <p class="precio">$90.000</p>
+                    </article>
+                    <article class="conteiner articulo-moda conteiner-venta">
+                        <img src="../media/moda/oferta1.png" alt="Zapatilla Harden Volumen 8">
+                        <p class="nombre-producto"> Harden Vol.8 </p>
+                        <p class="precio precio-viejo">$90.000</p>
+                        <p class="precio precio-oferta">63.000</p>
+                    </article>
+                </div>
+                <div class="venta-mobile">
+                    <div id="carouselCalzado" class="carousel slide">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <article class="conteiner articulo-moda conteiner-venta">
+                                <img src="../media/Moda/calzado1.png" alt="Zapatilla Nike Kyrie 7 'University Blue'">
+                                <p class="nombre-producto"> Nike Kyrie 7 'University Blue' </p>
+                                <p class="precio">$90.000</p>
+                            </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="conteiner articulo-moda conteiner-venta">
+                                <img src="../media/Moda/calzado2.png" alt="Zapatilla Tatum 2 'Legacy'">
+                                <p class="nombre-producto"> Tatum 2 'Legacy' </p>
+                                <p class="precio">$90.000</p>
+                            </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="conteiner articulo-moda conteiner-venta">
+                                <img src="../media/Moda/calzado3.png" alt="Zapatilla Luka 2">
+                                <p class="nombre-producto"> Luka 2 </p>
+                                <p class="precio">$90.000</p>
+                            </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article class="conteiner articulo-moda conteiner-venta">
+                                <img src="../media/moda/oferta1.png" alt="Zapatilla Harden Volumen 8">
+                                <p class="nombre-producto"> Harden Vol.8 </p>
+                                <p class="precio precio-viejo">$90.000</p>
+                                <p class="precio precio-oferta">63.000</p>
+                            </article>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCalzado" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselCalzado" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <footer>
+        <div class="redes-footer">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="./media/Iconos/icono-instagram.png" alt="Icono Instagram">
+            </a>
+            <a href="https://www.x.com" target="_blank">
+                <img src="./media/Iconos/icono-X.png" alt="Icono X">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="./media/Iconos/icono-facebook.png" alt="icono Facebook">
+            </a>
+        </div>
+        <div class="logo-footer">
+            <img src="../media/logo.png" alt="Logo" style="margin-right: 6px;">
+            <p> HoopHub </p>
+        </div>
+    </footer>
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
+</body>
+</html>
