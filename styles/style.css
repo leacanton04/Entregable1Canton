@@ -431,6 +431,9 @@ h1{
     color: rgb(255, 255, 255);
     padding: 0.3vw;
 }
+.boton-comentarios:hover{
+    background-color: rgb(112, 112, 112);    
+}
 .comentarios .formulario textarea{
     height: 100%;
 }
