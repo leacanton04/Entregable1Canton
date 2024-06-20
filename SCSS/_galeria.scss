@@ -8,14 +8,16 @@
     .item-galeria{
         width: 100%;   
         height: 100%;   
+        border-radius: 5px; 
         object-fit: cover;
         display: flex;
         justify-content: center; 
         align-self: center; 
+        transition: 0.5s;
     }
 
     .item-galeria:hover{
-        box-shadow: 0 0 15px 6px rgba(188, 116, 21, 0.7); 
+        box-shadow: $sombra-luz-galeria $color-luz-galeria; 
         transform: scale(1.015); 
         z-index: 10;
      /* height: 101.5%;

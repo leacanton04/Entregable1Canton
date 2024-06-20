@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* Poetsen One */
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+/* Colores que se usan poco */
 /* Es bastante innecesario, mas que nada lo cree para poner en practica todo lo visto */
 .contenedor-venta, .conteiner-venta {
   width: 22vw;
@@ -20,7 +21,7 @@
 
 p {
   margin: 0;
-  text-align: justify;
+  text-align: left;
 }
 
 a {
@@ -52,10 +53,12 @@ main {
   font-weight: 500;
   font-style: normal;
   color: #000;
+  border-radius: 4px;
+  transition: 0.5s;
 }
 
 .conteiner:hover {
-  filter: brightness(92%);
+  filter: brightness(90%);
 }
 
 /* Header & Footer */
@@ -95,18 +98,19 @@ header nav div .bar-pages .pages {
   color: #fff;
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
+  transition: 0.8s;
 }
 header nav div .bar-pages .pages:hover {
   color: rgb(147, 147, 153);
   text-decoration: underline;
 }
-
 @media only screen and (max-width: 767px) {
-  .bar-pages {
+  header nav div .bar-pages {
     display: flex;
     justify-content: start;
   }
 }
+
 footer {
   background-color: rgb(3, 3, 133);
   padding: 4vw;
@@ -290,6 +294,7 @@ footer .logo-footer p {
   height: 100%;
 }
 .main-contacto .ubicacion .mapa {
+  border-radius: 10px;
   width: 100%;
   height: 83%;
 }
@@ -349,10 +354,12 @@ footer .logo-footer p {
 .galeria .item-galeria {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   object-fit: cover;
   display: flex;
   justify-content: center;
   align-self: center;
+  transition: 0.5s;
 }
 .galeria .item-galeria:hover {
   box-shadow: 0 0 15px 6px rgba(188, 116, 21, 0.7);
@@ -549,6 +556,7 @@ footer .logo-footer p {
   margin: 7vw;
   padding: 1.5vw;
   border: 4px solid #a87800;
+  border-radius: 20px;
 }
 .main-moda .premium h3 {
   color: #a87800;
@@ -638,6 +646,7 @@ footer .logo-footer p {
   padding: 2% 10vw;
 }
 .body-index main .consejos .video-consejos {
+  border-radius: 10px;
   width: 100%;
   height: 45vw;
 }

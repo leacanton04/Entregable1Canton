@@ -37,18 +37,20 @@ header{
                     color: map-get($paleta-colores, fuente-claro );
                     font-family: "Nunito", sans-serif;
                     font-size: 1.5rem;
+                    transition: 0.8s;
                 }
                 .pages:hover{
                     color:rgb(147, 147, 153);
                     text-decoration: underline;
                 }   
             }
-        }    
+            @media only screen and (max-width: 767px){
+                .bar-pages{
+                    display: flex;
+                    justify-content: start;
+                }    
+            } 
+        }           
     }
 }
-@media only screen and (max-width: 767px){
-    .bar-pages{
-        display: flex;
-        justify-content: start;
-    }    
-}
+

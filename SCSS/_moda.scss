@@ -65,7 +65,8 @@
         background-color: map-get($paleta-colores, premium ) ;
         margin: 7vw;
         padding: 1.5vw ;
-        border: 4px solid map-get($paleta-colores, premium-oscuro ) ;
+        border: 4px solid map-get($paleta-colores, premium-oscuro );
+        border-radius: 20px;  
 
         h3{
             color: map-get($paleta-colores, premium-oscuro );
