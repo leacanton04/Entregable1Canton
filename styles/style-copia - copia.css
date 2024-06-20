@@ -1,0 +1,62 @@
+
+
+
+        /* PAGINA GALERIA */
+
+
+
+
+
+/* Posicionamiento imagenes Mobile */
+@media only screen and (max-width: 500px){ /* se sacaron algunas imagenes y se reorganizaron */
+    .galeria {
+        grid-template-rows: repeat(13, 1fr);
+    }
+    .galeria .uno{
+        grid-column: 1 / 13;
+        grid-row: 3 / 4; 
+    }
+    .galeria .dos{
+        grid-column: 13 / 25;
+        grid-row: 3 / 4;    
+    }
+    .galeria .tres{
+        display: none;
+    } 
+    .galeria .ocho{
+        display: none;
+    }
+    .galeria .nueve{
+        grid-column: 16 / 25;
+        grid-row: 8 / 10;       
+    }
+    .galeria .diez{
+        grid-column: 1 / 16;
+        grid-row: 8 / 9; 
+    }
+    .galeria .once{
+        grid-column: 1 / 16;
+        grid-row: 9 / 10;  
+    }
+    .galeria .doce{
+        grid-column: 1 / 10;
+        grid-row: 10 / 11;
+    }
+    .galeria .trece{
+        grid-column: 10/25;
+        grid-row: 10 / 11;
+    }
+    .galeria .catorce{
+        grid-column: 1 / 13;
+        grid-row: 11 / 12; 
+    }
+    .galeria .quince{
+        grid-column: 13 / 25;
+        grid-row: 11 / 12; 
+    }
+    .galeria .dieciseis{
+        grid-column: 1 / 25;
+        grid-row: 12 / 14;
+    }
+}
+

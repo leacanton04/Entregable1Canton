@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+    text-align: justify;
+}
+a{
+    text-decoration: none;
+}
+main{
+    padding-bottom: 8vw;
+}
+/* divisor de secciones */
+.division-seccion{
+    background-color: map-get($paleta-colores, opuesto );
+    margin: 8vw 0;
+    padding: 1.2vw 0;
+    width: 100vw;
+    color: map-get($paleta-colores, fuente-claro );
+    text-align: center;
+    font-size: 6vw;
+    font-family: "map-get($fuentes, principal)", sans-serif;
+    font-weight: 500;
+}
+/* container gris */
+.conteiner {
+    padding: 1.5vw;
+    background-color: map-get($paleta-colores, gris );
+    font-family: "map-get($fuentes, secundaria)", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: map-get($paleta-colores, fuente-oscuro );
+}
+.conteiner:hover {
+    filter: brightness(92%);
+}

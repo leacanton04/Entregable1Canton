@@ -1,0 +1,123 @@
+.galeria{
+    width: 100%;
+    padding: 2.5vw 5vw 70px 5vw;
+    background-color: map-get($paleta-colores, gris-oscuro );
+    @include grid(24, 14, 2vw);
+
+
+    .item-galeria{
+        width: 100%;   
+        height: 100%;   
+        object-fit: cover;
+        display: flex;
+        justify-content: center; 
+        align-self: center; 
+    }
+
+    .item-galeria:hover{
+        box-shadow: 0 0 15px 6px rgba(188, 116, 21, 0.7); 
+        transform: scale(1.015); 
+        z-index: 10;
+     /* height: 101.5%;
+        width: 101.5%; */   
+    }
+    /* Posicionamiento imagenes */
+    .cero{
+        @include posicion-grid(1, 25, 1, 3);
+    }
+    .uno {
+        @include posicion-grid(1, 9, 3, 4);
+    }
+    .dos {
+        @include posicion-grid(9, 17, 3, 4);
+    }
+    .tres {
+        @include posicion-grid(17, 25, 3, 4);
+    }
+    .cuatro {
+        @include posicion-grid(1, 13, 4, 6);
+    }
+    .cinco {
+        @include posicion-grid(13, 25, 4, 5);
+    }
+    .seis {
+        @include posicion-grid(13, 25, 5, 6);
+    }
+    .siete {
+        @include posicion-grid(1, 25, 6, 8);
+    }
+    .ocho {
+        @include posicion-grid(1, 16, 8, 10);
+    }
+    .nueve {
+        @include posicion-grid(16, 25, 8, 10);
+    }
+    .diez {
+        @include posicion-grid(1, 13, 10, 11);
+    }
+    .once {
+        @include posicion-grid(13, 25, 10, 11);
+    }
+    .doce {
+        @include posicion-grid(1, 10, 11, 12);
+    }
+    .trece {
+        @include posicion-grid(10, 25, 11, 12);
+    }
+    .catorce {
+        @include posicion-grid(1, 13, 12, 13);
+    }
+    .quince {
+        @include posicion-grid(13, 25, 12, 13);
+    }
+    .dieciseis {
+        @include posicion-grid(1, 25, 13, 15);
+    }
+
+    .footer-galeria{
+        margin: 0;
+    }
+
+
+     /* en pantallas pequenas se sacaron algunas imagenes y se reorganizaron */
+    @media only screen and (max-width: 500px) {
+        grid-template-rows: repeat(13, 1fr);
+
+        .uno {
+            @include posicion-grid(1, 13, 3, 4);
+        }
+        .dos {
+            @include posicion-grid(13, 25, 3, 4);
+        }
+        .tres {
+            display: none;
+        }
+        .ocho {
+            display: none;
+        }
+        .nueve {
+            @include posicion-grid(16, 25, 8, 10);
+        }
+        .diez {
+            @include posicion-grid(1, 16, 8, 9);
+        }
+        .once {
+            @include posicion-grid(1, 16, 9, 10);
+        }
+        .doce {
+            @include posicion-grid(1, 10, 10, 11);
+        }
+        .trece {
+            @include posicion-grid(10, 25, 10, 11);
+        }
+        .catorce {
+            @include posicion-grid(1, 13, 11, 12);
+        }
+        .quince {
+            @include posicion-grid(13, 25, 11, 12);
+        }
+        .dieciseis {
+            @include posicion-grid(1, 25, 12, 14);
+        }
+      }
+    }

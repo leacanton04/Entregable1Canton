@@ -1,0 +1,54 @@
+/* Logo */
+.logo{
+    text-decoration: none; 
+    img{
+        max-height: 60px;
+        min-height: 15px;
+        height: 10vw;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .bar-pages{
+        display: flex;
+        justify-content: start;
+    }    
+}
+/* Header */
+header{
+    nav{
+        background-color: map-get($paleta-colores, principal );
+        display: flex;
+
+        div{
+            .boton{
+                border: transparent ;
+            }
+            .boton:hover{
+                background-color: rgb(3, 3, 120);
+                border: rgb(255, 255, 255, 0.1) 0.5px solid;
+            }
+            
+            .bar-pages{
+                display: flex;
+                justify-content: end;
+
+                .pages {
+                    color: map-get($paleta-colores, fuente-claro );
+                    font-family: "Nunito", sans-serif;
+                    font-size: 1.5rem;
+                }
+                .pages:hover{
+                    color:rgb(147, 147, 153);
+                    text-decoration: underline;
+                }   
+            }
+        }    
+    }
+}
+@media only screen and (max-width: 767px){
+    .bar-pages{
+        display: flex;
+        justify-content: start;
+    }    
+}

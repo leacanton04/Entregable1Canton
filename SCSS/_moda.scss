@@ -1,0 +1,101 @@
+@import "extend";
+
+.section-pc-mobile{
+    @media only screen and (min-width: 426px){
+        .venta-mobile{
+            display: none;
+        }
+        .venta-pc{
+            display: flex;
+            justify-content: space-around;
+            align-items: center ;
+        }
+    } 
+    @media only screen and (max-width: 425px){
+        .venta-pc{
+            display: none;
+        }
+        .venta-mobile{
+            display: flex;
+            justify-content: center;
+        }
+        .conteiner-venta{
+            width: 158px;
+            height: 220px;
+
+            .nombre-producto{
+                font-size: 3.1vw;
+            }
+            .precio{
+                font-size: 2.7vw;
+            }
+        }
+    }
+}
+.conteiner-venta{
+    @extend .contenedor-venta;
+    img{
+        width: 100%;
+    }
+    .nombre-producto{
+        font-size: 2vw;
+        text-align: left;
+    }
+    .precios{
+        .precio{
+            display: inline-block;
+            font-size: 1.8vw; 
+        }
+        .precio-viejo{
+            text-decoration: line-through; 
+        }
+        .precio-oferta{
+            font-weight: 800;
+        }
+    }
+} 
+
+.main-moda{
+    .encabezado{
+        .oferta-encabezado{
+            width: 100%;   
+        }
+    }
+.premium{
+        background-color: map-get($paleta-colores, premium ) ;
+        margin: 7vw;
+        padding: 1.5vw ;
+        border: 4px solid map-get($paleta-colores, premium-oscuro ) ;
+
+        h3{
+            color: map-get($paleta-colores, premium-oscuro );
+            font-family: map-get($fuentes, premium) , cursive;
+            font-size: 5vw;
+            text-align: center;
+            margin: 0;
+        }
+        ul{
+            padding: 4vw;
+            display: inline-block;
+            color: map-get($paleta-colores, premium-oscuro );
+            font-family: map-get($fuentes, principal), sans-serif;
+            font-size: 3vw;
+            font-weight: 600;
+        }
+        img{
+            height: 18vw;
+        }
+        div{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    .remeras{
+        .venta-pc{
+            .conteiner-venta{ /* se agrado el container porque no entraba todo el conteindo */
+                height: 34vw;
+            }
+        }  
+    }
+}

@@ -1,0 +1,11 @@
+@mixin grid ($columns, $rows , $gap){
+    display: grid;
+    grid-template-columns: repeat($columns , 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    gap: $gap;
+}
+
+@mixin posicion-grid($col-start, $col-end, $row-start, $row-end) {
+    grid-column: #{$col-start} / #{$col-end};
+    grid-row: #{$row-start} / #{$row-end};
+}

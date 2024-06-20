@@ -1,0 +1,100 @@
+/* Esta afuera de main-noticias porque se usa en otra pagina y se esta adentro de main-noticias da problemas para rutilizar el codigo */
+.ultimas-noticias{
+    padding: 50px 0 0 0;
+    margin: 0 5vw;
+    @include grid(3, 4, 3vw);
+    
+    .noticia{
+        img{
+            width: 100%;  
+        }
+    }
+    .noticia-principal{
+        @include posicion-grid(1, 3, 1, 5);
+        p{
+            font-size: 2.8vw;
+        }
+    }
+    .noticia-secundaria{
+        @include posicion-grid(3, 4, 1, 3);
+        height: 100%;
+        p{
+            font-size: 1.9vw;
+        }
+    } 
+    .noticia-secundaria-2{ 
+        @include posicion-grid(3, 4, 3, 5);
+    }
+    @media only screen and (max-width: 425px) {
+        display: flex;
+        flex-direction: column;
+
+        .noticia-secundaria {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            img {
+                width: 50%;
+                margin-right: 3vw;
+            }
+
+            p {
+                font-size: 3.5vw;
+            }
+        }
+
+        .noticia-principal {
+            p {
+                font-size: 4vw;
+            }
+        }
+    }
+}
+
+
+.main-noticias{
+    .mas-noticias{
+        margin: 0 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .noticia-terciaria{
+            width: 27vw;
+            height: 23vw;
+            margin-bottom: 2vw;
+
+            img{
+                width: 100%;
+            }
+            p{
+                font-family: map-get($fuentes, secundaria), sans-serif;
+                text-align: justify;
+                font-size: 1.5vw;
+            }
+        }
+        @media only screen and (max-width: 425px) {
+            flex-direction: column;
+
+            .noticia-terciaria {
+                width: 100%;
+                height: auto; /* Ajustamos la altura a 'auto' para que se ajuste al contenido */
+                padding: 2.5vw;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 50%;
+                    margin-right: 3vw;
+                }
+
+                p {
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+}

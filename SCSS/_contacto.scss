@@ -1,0 +1,107 @@
+.main-contacto{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    @include grid(3, 3, 3vw);
+
+    .contacto{
+        h2{
+            font-family: map-get($fuentes, principal), sans-serif;
+            font-size: 5vw;
+            margin: 0;
+            color: map-get($paleta-colores, opuesto );
+        }
+        .titulo-comentarios{
+            font-size: 3.5vw;
+        }
+    }
+    .redes{
+        @include posicion-grid(1, 2, 1, 3); 
+
+        ul{
+            list-style: none;
+            padding-left: 0;
+            height: 83%;
+            display: flex;
+            flex-direction: column; 
+            justify-content: space-around;    
+            li{
+                a{
+                    display: flex;
+                    align-items: center;  
+                    margin-bottom: 10px;   
+                    p{
+                        display: inline;
+                        font-family: map-get($fuentes, secundaria), sans-serif;
+                        font-size: 3vw;
+                        color: map-get($paleta-colores, fuente-oscuro );
+                    }
+                    img{
+                        display: inline;
+                        width: 4vw;
+                        margin-right: 0.5vw;
+                    }
+                }
+            }
+        }
+    }
+    .ubicacion{
+        @include posicion-grid(2, 4, 1, 3);
+        width: 100%;
+        height: 100%;
+        .mapa{
+            width: 100%;
+            height: 83% ;
+        }
+    }
+    .comentarios{
+        @include posicion-grid(1, 3, 3, 4);
+        .formulario{
+            boton-comentarios{
+                margin-top: 0.7vw;
+                background-color: rgb(176, 176, 176);
+                padding: 0;
+
+                textarea{
+                    height: 100%;
+                }
+                boton-comentarios-interior{
+                    background-color: transparent;
+                    border: none;
+                    font-family: map-get($fuentes, secundaria), sans-serif;
+                    color: rgb(255, 255, 255);
+                    padding: 0.3vw;
+                }
+                .boton-comentarios:hover{
+                    background-color: rgb(112, 112, 112);    
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (max-width: 550px){
+    .main-contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        
+        .contacto{
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                li{
+                    a{
+                        display: flex;        
+                        justify-content: center;
+                    }
+                    p{
+                        display: none;
+                    } 
+                }
+            }
+
+        }
+    }
+}   
