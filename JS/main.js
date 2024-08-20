@@ -21,15 +21,16 @@ class Usuario{
     }
     iniciarSesion(){
         let usuario = prompt("Ingresa tu usuario");
-        if(usuario != this.usuario){
+        while(usuario != this.usuario){
             alert("Usuario incorrecto, intente de nuevo");
-            this.iniciarSesion();
+            usuario = prompt("Ingresa tu usuario");
         }
         let contrasena = prompt("Ingresa tu contrasena");
         while(contrasena != this.contrasena){
             alert("Contrasena incorrecta, intente de nuevo");
             contrasena = prompt("Ingresa tu contrasena");
         }
+        localStorage.getItem("usuario", JSON.stringify(this.usuario));
     }
     //si o si hay que crear un usuario, porque sino no hay nada guardado en los datos del Usuario. Si hubiera una base de datos, se podria hacer un login directamente
 }
@@ -63,6 +64,7 @@ class Tienda{
                 this.carrito.push(producto);
             }
         }
+        localStorage.getItem("carrito", JSON.stringify(this.carrito));
     }
 
     mostrarCarrito(){
@@ -90,14 +92,18 @@ class Tienda{
 
 //REGISTRO E INICIO DE SESION
 
-let inicioRegistro = confirm("¿Tienes usuario?");
-if(inicioRegistro == true){
-    let usuario = new Usuario();
-    usuario.iniciarSesion();
+if (localStorage.getItem("usuario") == null){
+    let inicioRegistro = confirm("¿Tienes usuario?");
+    if(inicioRegistro == true){
+        let usuario = new Usuario();
+        usuario.iniciarSesion();
+    }else{
+        let usuario = new Usuario();
+        usuario.registrarUsuario();
+        usuario.iniciarSesion();
+    }
 }else{
-    let usuario = new Usuario();
-    usuario.registrarUsuario();
-    usuario.iniciarSesion();
+    alert("Bienvenido de nuevo " + localStorage.getItem("usuario"));
 }
 
 

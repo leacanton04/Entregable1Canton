@@ -16,11 +16,11 @@ main{
 .division-seccion{
     background-color: map-get($paleta-colores, opuesto );
     margin: 8vw 0;
-    padding: 1.2vw 0;
+    padding: 0.8vw 0;
     width: 100vw;
     color: map-get($paleta-colores, fuente-claro );
     text-align: center;
-    font-size: 6vw;
+    font-size: 4vw;
     font-family: "map-get($fuentes, principal)", sans-serif;
     font-weight: 500;
 }
