@@ -5,18 +5,16 @@
 /* Poetsen One */
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 /* Colores que se usan poco */
-/* Es bastante innecesario, mas que nada lo cree para poner en practica todo lo visto */
-.contenedor-venta, .conteiner-venta {
-  width: 22vw;
-  height: 32vw;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
 * {
   margin: 0;
   padding: 0;
+}
+
+.separar {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 p {
@@ -55,10 +53,6 @@ main {
   color: #000;
   border-radius: 4px;
   transition: 0.5s;
-}
-
-.conteiner:hover {
-  filter: brightness(90%);
 }
 
 /* Header & Footer */
@@ -247,6 +241,10 @@ footer .logo-footer p {
   .main-noticias .mas-noticias .noticia-terciaria p {
     font-size: 3vw;
   }
+}
+
+.noticia:hover {
+  filter: brightness(90%);
 }
 
 .main-contacto {
@@ -498,15 +496,6 @@ footer .logo-footer p {
   }
 }
 
-/* Es bastante innecesario, mas que nada lo cree para poner en practica todo lo visto */
-.contenedor-venta, .conteiner-venta {
-  width: 22vw;
-  height: 32vw;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
 .barra-compras {
   background-color: rgb(3, 3, 133);
   padding: 2vw 4vw;
@@ -525,7 +514,7 @@ footer .logo-footer p {
   padding: 0 2vw;
   border: 1px solid #fff;
 }
-.barra-compras .buscador .buscar-input {
+.barra-compras .buscador #buscar-input {
   width: 100%;
   height: 3.5vw;
   min-height: 35px;
@@ -535,10 +524,10 @@ footer .logo-footer p {
   background-color: transparent;
   color: #fff;
 }
-.barra-compras .buscador .buscar-input::placeholder {
+.barra-compras .buscador #buscar-input::placeholder {
   color: #fff;
 }
-.barra-compras .buscador .buscar-input:focus {
+.barra-compras .buscador #buscar-input:focus {
   outline: none; /* Asegura que no haya contorno al enfocarlo */
 }
 .barra-compras .buscador button {
@@ -558,7 +547,7 @@ footer .logo-footer p {
   justify-content: center;
   align-items: end;
 }
-.barra-compras .carrito #carrito {
+.barra-compras .carrito #icono-carrito {
   max-height: 55px;
   min-height: 30px;
   height: 6vw;
@@ -581,14 +570,20 @@ footer .logo-footer p {
   padding: 0;
 }
 
+.section-pc-mobile {
+  padding: 3vw 0;
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (min-width: 426px) {
   .section-pc-mobile .venta-mobile {
     display: none;
   }
   .section-pc-mobile .venta-pc {
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -599,24 +594,45 @@ footer .logo-footer p {
     display: flex;
     justify-content: center;
   }
+  .section-pc-mobile .venta-mobile .carousel-item {
+    display: flex;
+    justify-content: center;
+  }
   .section-pc-mobile .conteiner-venta {
     width: 158px;
-    height: 220px;
+    height: 240px;
+    padding-bottom: 15px;
   }
   .section-pc-mobile .conteiner-venta .nombre-producto {
-    font-size: 3.1vw;
+    font-size: 3.5vw;
   }
   .section-pc-mobile .conteiner-venta .precio {
-    font-size: 2.7vw;
+    font-size: 3vw;
   }
 }
 
+.conteiner-venta {
+  width: 22vw;
+  height: 32vw;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 4vw;
+  margin: 1.3vw;
+}
 .conteiner-venta img {
   width: 100%;
 }
+.conteiner-venta div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .conteiner-venta .nombre-producto {
-  font-size: 2vw;
+  font-size: 1.7vw;
   text-align: left;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
 }
 .conteiner-venta .precio {
   display: inline-block;
@@ -625,6 +641,28 @@ footer .logo-footer p {
 }
 .conteiner-venta .precio-viejo {
   text-decoration: line-through;
+}
+.conteiner-venta .add-to-cart {
+  height: 3vw;
+  width: 6vw;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.conteiner-venta .add-to-cart:hover {
+  background-color: #cc0000;
+}
+.conteiner-venta .add-to-cart img {
+  height: 2vw;
+  width: 2vw;
+  min-height: 15px;
+  min-width: 15px;
 }
 
 .main-moda .encabezado .oferta-encabezado {
@@ -660,17 +698,85 @@ footer .logo-footer p {
   justify-content: space-around;
   align-items: center;
 }
-.main-moda .remeras .venta-pc .conteiner-venta { /* se agrado el container porque no entraba todo el conteindo */
-  height: 34vw;
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
 }
 
-/* Es bastante innecesario, mas que nada lo cree para poner en practica todo lo visto */
-.contenedor-venta, .conteiner-venta {
-  width: 22vw;
-  height: 32vw;
-  display: inline-flex;
+#carrito {
+  width: 100vw;
+  display: flex;
   flex-direction: column;
-  justify-content: start;
+  align-items: center;
+  padding: 2vw;
+}
+#carrito .container-carrito {
+  margin-top: 2vw;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  background-color: #e1e1e1;
+  border-radius: 12px;
+}
+#carrito .container-carrito .item-carrito {
+  display: flex;
+  margin: 0 15px;
+  padding: 15px 0;
+  border-bottom: 1.6px solid rgba(135, 134, 134, 0.5);
+}
+#carrito .container-carrito .item-carrito img {
+  width: 20%;
+  height: 20%;
+  max-width: 100px;
+  flex: 1 1 100px;
+}
+#carrito .container-carrito .item-carrito div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88%;
+}
+#carrito .container-carrito .item-carrito div .nombre-producto {
+  font-size: clamp(20px, 3vw, 30px);
+  margin-bottom: 0;
+  font-weight: 500;
+  padding: 0 2vw;
+}
+#carrito .container-carrito .item-carrito div p {
+  font-size: clamp(15px, 2vw, 23px);
+  font-weight: 600;
+  text-align: end;
+}
+@media only screen and (max-width: 770px) {
+  #carrito .container-carrito {
+    width: 90%;
+  }
+}
+#carrito .container-carrito .subtotal {
+  padding: 15px;
+}
+#carrito .container-carrito .subtotal p {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: end;
+}
+#carrito .container-carrito .subtotal button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #464646;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#carrito .container-carrito .subtotal button:hover {
+  background-color: #2e2e2e;
+}
+#carrito .container-carrito .subtotal button:active {
+  background-color: #1f1f1f;
 }
 
 .body-index h1 {

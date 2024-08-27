@@ -1,25 +1,3 @@
-class Perro:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+import random
 
-    def __str__(self):
-        return f"{self.nombre}, {self.edad} años"
-
-# Crear una lista para almacenar los perros
-perros = []
-
-# Cargar 6 perros con sus edades
-for i in range(3):
-    nombre = input(f"Ingrese el nombre del perro {i+1}: ")
-    edad = int(input(f"Ingrese la edad de {nombre}: "))
-    perros.append(Perro(nombre, edad))
-
-# Determinar el perro con mayor edad
-perro_mayor = max(perros, key=lambda perro: perro.edad)
-print(f"El perro mayor es {perro_mayor.nombre} con {perro_mayor.edad} años.")
-
-# Calcular la edad promedio de todos los perros
-edad_total = sum(perro.edad for perro in perros)
-edad_promedio = edad_total / len(perros)
-print(f"La edad promedio de todos los perros es {edad_promedio:.2f} años.")
+print(random.randint(1, 4))

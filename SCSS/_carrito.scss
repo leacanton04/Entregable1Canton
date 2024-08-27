@@ -1,0 +1,84 @@
+#carrito{
+    width: 100vw;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    
+    .container-carrito{
+        margin-top: 2vw;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        background-color: #e1e1e1;
+        border-radius: 12px;        
+        
+        .item-carrito{
+            display: flex;
+            margin: 0 15px;
+            padding: 15px 0;
+            border-bottom: 1.6px solid rgba(135, 134, 134, 0.5);
+            
+            img{
+                width: 20%; // Modificado: Ajuste del tamaño de la imagen
+                height: 20%; // Modificado: Mantener la proporción de la imagen
+                max-width: 100px; // Agregado: Ancho máximo para la imagen
+                flex: 1 1 100px; // Agregado: Flexibilidad para la imagen               
+            }
+
+            div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 88%;
+
+                .nombre-producto{
+                    font-size: clamp(20px, 3vw, 30px);
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    padding: 0 2vw;
+                }
+                
+                p{
+                    font-size: clamp(15px, 2vw, 23px);
+                    font-weight: 600;
+                    text-align: end;
+                }
+            }
+
+        }
+        @media only screen and (max-width: 770px) {
+            width: 90%;                
+        }
+
+        .subtotal{
+            padding: 15px;
+
+            p{
+                font-size: 25px;
+                font-weight: 700;
+                text-align: end;
+            }
+            button{
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px;
+                background-color: #464646;
+                color: white;
+                border: none;
+                border-radius: 12px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #2e2e2e;
+            }
+            button:active {
+                background-color: #1f1f1f;
+            }
+
+        }
+            
+    }
+}
