@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Metaetiquetas SEO -->
-    <meta name="description"
-        content="Descubre la última moda en baloncesto en HoopHub. Ropa y accesorios para fans y jugadores de baloncesto.">
-    <meta name="keywords"
-        content="moda de baloncesto, ropa de baloncesto, accesorios de baloncesto, merchandising de baloncesto, estilo deportivo, zapatillas baloncesto">
+    <meta name="description" content="Revisa y actualiza los productos en tu carrito de compras. Finaliza tu compra fácilmente en nuestra tienda online de moda y productos deportivos." />
+    <meta name="keywords" content="carrito de compras, moda, tienda deportiva, productos deportivos, finalizar compra" />
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -21,7 +19,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="../media/logo.ico" type="image/x-icon">
     <!-- Titulo -->
-    <title> Moda y Ropa de Baloncesto - HoopHub </title>
+    <title> Carrito de compras - HoopHub </title>
 </head>
 <body class="separar">
     <header>
@@ -30,25 +28,10 @@
                 <a class="navbar-brand logo" href="../index.html">
                     <img src="../media/logo.png" alt="Logo">
                 </a>
-                <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bar-pages" id="navbarNav">
+                
+                <div class=" bar-pages" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link pages" aria-current="page" href="../pages/moda.html">Moda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pages" href="../pages/noticias.html">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pages" href="../pages/galeria.html">Galería</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pages" href="../pages/contacto.html"> Contacto</a>
-                        </li>
-                        <li>
+                        <li class="nav-item"></li>
                             <img src="../media/Iconos/icono-user.png" alt="" id="user">
                         </li>
                     </ul>
@@ -61,25 +44,39 @@
             Carrito de Compras
         </h1>
         <section class="container-carrito">
-            <div id="">   
+            <div id="objetos-carrito">   
                 <!-- <article class="item-carrito">
-                    <img src="../media/Moda/exclusivo1.png" alt=".">
-                    <div>
+                    <img src="../media/Moda/exclusivo1.png" alt="nombre zapatilla" class="imagenCarrito">
+                    <div class="dettallesProductoCarrito">
                         <h2 class="nombre-producto">
                              jordan 1 chicago kfndsdsfa
                         </h2>
-                        <p class="pprecio">
-                            90000
-                        </p>
+                        <div>
+                            <p class="pprecio">
+                                90000
+                            </p>
+                            <button id="boton-borrar" >
+                                <img src="../media/Iconos/icono-basurero.png" alt="icono basurero" id="borrarItemCarrito">
+                            </button>
+                        </div>
                     </div> 
-                </article>    -->         
+                </article> -->            
             </div>          
             <div class="subtotal">
-                <p> Subtotal: </p>
-                <p> $180000 </p>
-                <button> Comprar </button>
+                <p>
+                    Subtotal:
+                </p>
+                <p id="subtotal-precio">
+                     $0
+                </p>
+                <button id="comprar-carrito" onclick="carrito1.comprar()">
+                    Comprar
+                </button>
             </div>           
         </section>
+        <a class="seguir-comprando" aria-current="page" href="../pages/moda.html">
+            Seguir comprando 
+        </a>
     </main>
     <footer>
         <div class="redes-footer">
@@ -102,7 +99,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="../JS/main.js"></script> 
+    <script src="../JS/carrito.js"></script> 
 </body>
 
 </html>
