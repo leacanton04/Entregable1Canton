@@ -1,7 +1,7 @@
 class Producto{
-    constructor(nombre, imgUrl, precio, cantidad){
+    constructor(nombre, imagen, precio, cantidad){
         this.nombre = nombre;
-        this.imgUrl = imgUrl;
+        this.imagen = imagen;
         this.precio = parseFloat(precio);
         this.cantidad = cantidad || 1;
 
@@ -9,49 +9,21 @@ class Producto{
 }
 
 class Tienda{
-    constructor(){
-        this.productos = [
-            new Producto('Jordan 1 Chicago OG 1985', '../media/Moda/exclusivo1.png', 90000),
-            new Producto('Under Armour Curry 6 Splash Party', '../media/Moda/exclusivo2.png', 90000),
-            new Producto('Nike LeBron 17 Lakers ', '../media/Moda/exclusivo3.png', 90000),
-            new Producto('Adidas Dame 6 Ruthless', '../media/Moda/exclusivo4.png', 90000),
-            new Producto('Camiseta James Harden Huston Rockets', '../media/Moda/Remeras1.png', 100000),
-            new Producto('Camiseta Manu Ginobili San Antonio Spurs', '../media/Moda/Remeras2.png', 85000),
-            new Producto('Camiseta LeBron James Los Angeles Lakers', '../media/Moda/Remeras3.png', 100000),
-            new Producto('Camiseta Michel Jordan Chicago Bulls', '../media/Moda/Remeras4.png', 80000),
-            new Producto('Nike Kyrie 7 University Blue', '../media/Moda/calzado1.png', 90000),
-            new Producto('Tatum 2 Legacy', '../media/Moda/calzado2.png', 90000),
-            new Producto('Luka 2', '../media/Moda/calzado3.png', 90000),
-            new Producto('Harden Vol.8', '../media/Moda/oferta1.png', 63000) 
-            ];
-
+    constructor(productos){
+        this.productos = productos;
         this.carrito = [];
     }
 
-    /* 
-    async cargarProductos(){
-        try{
-            let respuesta = await fetch('../data/productos.json');
-            let productos = await respuesta.json();
-            productos.forEach(producto => {
-                this.productos.push(new Producto(producto.nombre, producto.imgUrl, producto.precio));
-            });
-
-        }catch(error){
-            console.error('Error al cargar el archivo JSON:');
-        }
-    }
-     */        
 
     /* filtrar los productos con el imput del buscador */    
     filtrarProductos(){
-        let inputBuscador = document.getElementById("buscar-input"); //recibe el input del buscador
-        let contenedorResultadosPc = document.getElementById("venta-pc"); //aca se muestran los productos en pc
-        let contenedorResultadosMobile = document.getElementById("venta-mobile"); //aca se muestran los productos en mobile
+        let inputBuscador = document.getElementById("buscar-input");
+        let contenedorResultadosPc = document.getElementById("venta-pc"); 
+        let contenedorResultadosMobile = document.getElementById("venta-mobile");
         
         this.productos.forEach(producto => {
-            contenedorResultadosPc.appendChild(this.mostraarProductosPc(producto));
-            contenedorResultadosMobile.appendChild(this.mostraarProductosMobile(producto));
+            contenedorResultadosPc.appendChild(this.mostrarProductosPc(producto));
+            contenedorResultadosMobile.appendChild(this.mostrarProductosMobile(producto));
         });
 
         inputBuscador.addEventListener("input", (e) => {
@@ -62,39 +34,44 @@ class Tienda{
             this.productos.forEach(producto => {
                 if (producto.nombre.toLowerCase().includes(cadena.toLowerCase())){
                     
-                    contenedorResultadosPc.appendChild(this.mostraarProductosPc(producto));
-                    contenedorResultadosMobile.appendChild(this.mostraarProductosMobile(producto));
+                    contenedorResultadosPc.appendChild(this.mostrarProductosPc(producto));
+                    contenedorResultadosMobile.appendChild(this.mostrarProductosMobile(producto));
                 }
             }); 
         });
     } 
 
-    /* Mostrar los productos buscados en el buscador */
-    mostraarProductosPc(producto){
 
-        let articuloPc = document.createElement('article'); //creamos el aritculo para desktop
-        articuloPc.classList.add('conteiner', 'articulo-moda', 'conteiner-venta'); //agregamos las clases
-        
+    /* Mostrar los productos buscados en el buscador */
+
+    mostrarProductosPc(producto){
+        let articuloPc = document.createElement('article'); 
+        articuloPc.classList.add('conteiner', 'articulo-moda', 'conteiner-venta'); 
+
         articuloPc.innerHTML = `
-            <img src="${producto.imgUrl}" alt="${producto.nombre}">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
             <p class="nombre-producto"> ${producto.nombre} </p>
             <div>
                 <p class="precio"> $${producto.precio}</p>
-                <button class="add-to-cart" onclick="tienda1.agregarAlCarrito('${producto.nombre}')">
+                <button class="add-to-cart">
                     <img src="../media/Iconos/icono-carrito.png" alt="Icono carrito">
                 </button>
-            </div>`;     
-               
+            </div>`;
+
+        articuloPc.querySelector('.add-to-cart').addEventListener('click', () => {
+            tienda1.agregarAlCarrito(producto.nombre);
+        });
+
         return articuloPc;              
     }
 
-    mostraarProductosMobile(producto){
-        let articuloMobile = document.createElement('div'); //creamos el aritculo para desktop
-        articuloMobile.classList.add('carousel-item', 'active');//agregamos las clases
+    mostrarProductosMobile(producto){
+        let articuloMobile = document.createElement('div'); 
+        articuloMobile.classList.add('carousel-item', 'active');
 
         articuloMobile.innerHTML = `
             <article class="conteiner articulo-moda conteiner-venta">
-                <img src="${producto.imgUrl}" alt="${producto.nombre}">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
                 <p class="nombre-producto"> ${producto.nombre} </p>
                 <div>
                     <p class="precio"> $${producto.precio}</p>
@@ -107,6 +84,7 @@ class Tienda{
         return articuloMobile;
     }
     
+
     /* Gestionar carrito */
 
     agregarAlCarrito(productoNombre) {
@@ -119,18 +97,42 @@ class Tienda{
             productoEnCarrito.precio = producto.precio * productoEnCarrito.cantidad;
             this.setCarrito();
         } else {
-            let productoNuevo = new Producto(producto.nombre, producto.imgUrl, producto.precio, 1)
+            let productoNuevo = new Producto(producto.nombre, producto.imagen, producto.precio, 1)
             this.carrito.push(productoNuevo);
         }    
         this.actualizarCarrito(); 
+
+        // Mostrar notificación 
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: false,
+            background: '#28a745',  
+            iconColor: '#fff',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+        Toast.fire({
+            icon: 'success',
+            title: '¡Elemento agregado con éxito!'
+        });
     }        
-    
 
     getCarrito(){
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         carrito.forEach(producto => {
-            this.carrito.push(new Producto(producto.nombre, producto.imgUrl, producto.precio, producto.cantidad));
+            this.carrito.push(new Producto(producto.nombre, producto.imagen, producto.precio, producto.cantidad));
         });
+
+        this.actualizarCarrito();
     }
 
     setCarrito(){
@@ -167,19 +169,27 @@ class Tienda{
         let contenedorCarrito = document.getElementById("objetos-carrito");
         contenedorCarrito.innerHTML = "";
     }
-       
-    
 }
 
-tienda1 = new Tienda();
-tienda1.getCarrito();
-tienda1.filtrarProductos();
-tienda1.actualizarCarrito();
 
+let tienda1; 
 
-/* hay que conectar el json para la lista de objetos y aca hacer toda la estructura del try/catch */
+async function fetchData() {
+    const apiUrl = "https://mocki.io/v1/a71141ee-0e4f-4207-812d-f5c2b09c33e0";
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const productos = data.productos;  
+        
+        tienda1 = new Tienda(productos);   
+        console.log(tienda1.productos);      
+        
+        tienda1.getCarrito();
+        tienda1.filtrarProductos();
 
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-
-
-
+fetchData();

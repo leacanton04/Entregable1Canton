@@ -1,7 +1,7 @@
 class Producto{
-    constructor(nombre, imgUrl, precio, cantidad){
+    constructor(nombre, imagen, precio, cantidad){
         this.nombre = nombre;
-        this.imgUrl = imgUrl;
+        this.imagen = imagen;
         this.precio = parseFloat(precio);
         this.cantidad = cantidad || 1;
 
@@ -27,26 +27,11 @@ class Carrito{
 
         this.carrito = [];
     }
-
-    /* 
-    async cargarProductos(){
-        try{
-            let respuesta = await fetch('../data/productos.json');
-            let productos = await respuesta.json();
-            productos.forEach(producto => {
-                this.productos.push(new Producto(producto.nombre, producto.imgUrl, producto.precio));
-            });
-
-        }catch(error){
-            console.error('Error al cargar el archivo JSON:');
-        }
-    }
-     */     
-
+   
     getCarrito(){
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         carrito.forEach(producto => {
-            this.carrito.push(new Producto(producto.nombre, producto.imgUrl, producto.precio, producto.cantidad));
+            this.carrito.push(new Producto(producto.nombre, producto.imagen, producto.precio, producto.cantidad));
         });
     }
 
@@ -56,13 +41,51 @@ class Carrito{
     }
 
     borrarItemCarrito(productoNombre) {
-        this.carrito.forEach((producto, index) => {
-            if (producto.nombre === productoNombre) {
-                this.carrito.splice(index, 1);
+        // Confirmación de eliminación 
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Este artículo será eliminado del carrito",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',  
+            cancelButtonColor: '#3085d6',  
+            confirmButtonText: 'Sí, eliminarlo',
+            cancelButtonText: 'Cancelar',
+            customClass: {
+                popup: 'swal2-popup-custom', 
+            }
+        }).then((result) => {
+
+            // Mostrar notificación 
+            if (result.isConfirmed) {
+                this.carrito = this.carrito.filter(producto => producto.nombre !== productoNombre);
+                this.actualizarCarrito();
+    
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: false,
+                    background: '#d33', 
+                    iconColor: '#fff',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                });
+    
+                Toast.fire({
+                    icon: 'error',
+                    title: '¡Elemento eliminado!'
+                });
             }
         });
-        this.actualizarCarrito();
     }
+    
 
     actualizarCarrito(){
         this.precioTotalCarrito();
@@ -91,7 +114,7 @@ class Carrito{
                 <p class="cantidad"> ${producto.cantidad} </p>
             </div>
 
-            <img src="${producto.imgUrl}" alt="${producto.nombre}" class="imagenCarrito">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="imagenCarrito">
             <div class="dettallesProductoCarrito">
             <h2 class="nombre-producto">
             ${producto.nombre}
@@ -119,14 +142,38 @@ class Carrito{
         precioTotal.innerHTML = `$ ${total}`;
     }
 
-    comprar(){
-        let respuesta = confirm("¿Desea confirmar la compra?");
-        if (respuesta == true){
-            alert("Gracias por su compra");
-            this.vaciarCarrito();           
+    async comprar() {
+        if (this.carrito.length > 0) {
+            const result = await Swal.fire({
+                title: '¿Deseas confirmar la compra?',
+                text: "No podrás deshacer esta acción",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#28a745',  // Verde para confirmar
+                cancelButtonColor: '#d33',  // Rojo para cancelar
+                confirmButtonText: 'Sí, confirmar',
+                cancelButtonText: 'Cancelar',
+                customClass: {
+                    popup: 'swal2-popup-custom',  // Clase personalizada para estilo profesional
+                }
+            });
+    
+            if (result.isConfirmed) {
+                // Vacía el carrito
+                this.carrito = [];
+    
+                // Muestra el mensaje de agradecimiento
+                await Swal.fire({
+                    title: '¡Gracias por su compra!',
+                    icon: 'success',
+                    confirmButtonColor: '#28a745',
+                    confirmButtonText: 'OK',
+                });
+
+                this.vaciarCarrito();
+            }
         }
     }
-    
     
 }
 
@@ -136,7 +183,7 @@ carrito1.mostrarCarrito();
 carrito1.actualizarCarrito();
 
 
-/* hay que conectar el json para la lista de objetos y aca hacer toda la estructura del try/catch */
+
 
 
 

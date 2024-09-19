@@ -159,17 +159,23 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        &:hover {
-            background-color: darken(#ff0000, 10%); 
+
+        img{
+            height: 2vw;
+            width: 2vw;
+            min-height: 15px;
+            min-width: 15px;
         }
-            img{
-                height: 2vw;
-                width: 2vw;
-                min-height: 15px;
-                min-width: 15px;
-            }
+    }
+
+    .add-to-cart:hover{
+        background-color: darken(#ff0000, 10%); 
     }   
-} 
+
+    .add-to-cart:active{
+        background-color: darken(#ff0000, 20%);        
+    } 
+}
 
 .main-moda{
     .encabezado{

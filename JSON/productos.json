@@ -1,65 +1,77 @@
+
 {
-    "productos": [
-      {
-        "nombre": "Jordan 1 Chicago OG 1985",
-        "imagen": "../media/Moda/exclusivo1.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Under Armour Curry 6 Splash Party",
-        "imagen": "../media/Moda/exclusivo2.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Nike LeBron 17 Lakers",
-        "imagen": "../media/Moda/exclusivo3.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Adidas Dame 6 Ruthless",
-        "imagen": "../media/Moda/exclusivo4.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Camiseta James Harden Huston Rockets",
-        "imagen": "../media/Moda/Remeras1.png",
-        "precio": 100000
-      },
-      {
-        "nombre": "Camiseta Manu Ginobili San Antonio Spurs",
-        "imagen": "../media/Moda/Remeras2.png",
-        "precio": 85000
-      },
-      {
-        "nombre": "Camiseta LeBron James Los Angeles Lakers",
-        "imagen": "../media/Moda/Remeras3.png",
-        "precio": 100000
-      },
-      {
-        "nombre": "Camiseta Michel Jordan Chicago Bulls",
-        "imagen": "../media/Moda/Remeras4.png",
-        "precio": 80000
-      },
-      {
-        "nombre": "Nike Kyrie 7 University Blue",
-        "imagen": "../media/Moda/calzado1.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Tatum 2 Legacy",
-        "imagen": "../media/Moda/calzado2.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Luka 2",
-        "imagen": "../media/Moda/calzado3.png",
-        "precio": 90000
-      },
-      {
-        "nombre": "Harden Vol.8",
-        "imagen": "../media/Moda/oferta1.png",
-        "precio": 63000
-      }
-    ]
+  "productos": [
+    {
+      "nombre": "Jordan 1 Chicago OG 1985",
+      "imagen": "../media/Moda/exclusivo1.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Under Armour Curry 6 Splash Party",
+      "imagen": "../media/Moda/exclusivo2.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Nike LeBron 17 Lakers",
+      "imagen": "../media/Moda/exclusivo3.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Adidas Dame 6 Ruthless",
+      "imagen": "../media/Moda/exclusivo4.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Camiseta James Harden Huston Rockets",
+      "imagen": "../media/Moda/Remeras1.png",
+      "precio": 100000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Camiseta Manu Ginobili San Antonio Spurs",
+      "imagen": "../media/Moda/Remeras2.png",
+      "precio": 85000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Camiseta LeBron James Los Angeles Lakers",
+      "imagen": "../media/Moda/Remeras3.png",
+      "precio": 100000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Camiseta Michel Jordan Chicago Bulls",
+      "imagen": "../media/Moda/Remeras4.png",
+      "precio": 80000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Nike Kyrie 7 University Blue",
+      "imagen": "../media/Moda/calzado1.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Tatum 2 Legacy",
+      "imagen": "../media/Moda/calzado2.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Luka 2",
+      "imagen": "../media/Moda/calzado3.png",
+      "precio": 90000,
+      "cantidad": 1
+    },
+    {
+      "nombre": "Harden Vol.8",
+      "imagen": "../media/Moda/oferta1.png",
+      "precio": 63000,
+      "cantidad": 1
+    }
+  ]
 }
-  

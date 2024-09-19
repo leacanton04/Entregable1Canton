@@ -116,7 +116,7 @@ header nav div .bar-pages .pages:hover {
 
 footer {
   background-color: rgb(3, 3, 133);
-  padding: 4vw;
+  padding: 2.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -657,14 +657,17 @@ footer .logo-footer p {
   align-items: center;
   cursor: pointer;
 }
-.conteiner-venta .add-to-cart:hover {
-  background-color: #cc0000;
-}
 .conteiner-venta .add-to-cart img {
   height: 2vw;
   width: 2vw;
   min-height: 15px;
   min-width: 15px;
+}
+.conteiner-venta .add-to-cart:hover {
+  background-color: #cc0000;
+}
+.conteiner-venta .add-to-cart:active {
+  background-color: #990000;
 }
 
 .main-moda .encabezado .oferta-encabezado {
