@@ -102,7 +102,7 @@ class Tienda{
         }    
         this.actualizarCarrito(); 
 
-        // Mostrar notificación 
+        /* Mostrar notificación  */
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',

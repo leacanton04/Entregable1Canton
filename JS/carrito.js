@@ -41,7 +41,7 @@ class Carrito{
     }
 
     borrarItemCarrito(productoNombre) {
-        // Confirmación de eliminación 
+        /* Confirmación de eliminación  */
         Swal.fire({
             title: '¿Estás seguro?',
             text: "Este artículo será eliminado del carrito",
@@ -56,7 +56,7 @@ class Carrito{
             }
         }).then((result) => {
 
-            // Mostrar notificación 
+            /* Mostrar notificación  */
             if (result.isConfirmed) {
                 this.carrito = this.carrito.filter(producto => producto.nombre !== productoNombre);
                 this.actualizarCarrito();
@@ -149,20 +149,17 @@ class Carrito{
                 text: "No podrás deshacer esta acción",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#28a745',  // Verde para confirmar
-                cancelButtonColor: '#d33',  // Rojo para cancelar
+                confirmButtonColor: '#28a745', 
+                cancelButtonColor: '#d33',  
                 confirmButtonText: 'Sí, confirmar',
                 cancelButtonText: 'Cancelar',
                 customClass: {
-                    popup: 'swal2-popup-custom',  // Clase personalizada para estilo profesional
+                    popup: 'swal2-popup-custom', 
                 }
             });
     
-            if (result.isConfirmed) {
-                // Vacía el carrito
-                this.carrito = [];
-    
-                // Muestra el mensaje de agradecimiento
+            if (result.isConfirmed) {                              
+                /* Muestra el mensaje de agradecimiento */
                 await Swal.fire({
                     title: '¡Gracias por su compra!',
                     icon: 'success',
